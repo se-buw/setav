@@ -52,26 +52,6 @@ class lane:
                 cv.line(image, (x1,y1), (x2, y2), (0,255,0),5)
         return image
     
-    def regression(self,image, lines):
-        left=[]
-        right = []
-        left_side = np.array([left,np.int32])
-        left_side = left_side .reshape((-1, 1, 2))
-        right_side=np.array([right,np.int32])
-        right_side = right_side.reshape((-1, 1, 2))
-        for line in lines:
-            x1, y1, x2, y2 = line.reshape(4)
-            parameters = np.polyfit((x1, x2), (y1, y2), 1)
-            slope = parameters[0]
-            if slope < 0:
-                left+=[[x1,y1],[x2,y2]]
-            else:
-                right+=[[x1,y1],[x2,y2]]
-        image=np.polyfit(image,[left_side],False,(0,255,0),3)
-        image=np.polyfit(image,[right_side],False,(0,255,0),3)
-        return image
-        #return np.array(left,right)
-
 
 # Images ane send through methods one by one to determine lanes
 def callback(data):
@@ -88,8 +68,6 @@ def callback(data):
     hough=detect.houghlines(canny)
     print(hough)
     laneDetection=detect.drawLines(hough,birds_eye)
-    rege=detect.regression(hough,birds_eye)
-    cv.imshow('rege',rege)
     cv.imshow('lanes',laneDetection)
     cv.imshow('image',image)
     cv.waitKey(1)
