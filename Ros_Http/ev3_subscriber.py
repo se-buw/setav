@@ -9,7 +9,7 @@ motor_B = LargeMotor('outB')
 motor_C = MediumMotor('outC')
 
 def setSteering(steering):
-    motor_C.run_to_abs_pos(position_sp=int(steering), speed_sp=500)
+    motor_C.run-to-rel-pos(position_sp=int(steering), speed_sp=600)
 
 def setSpeed(speed):
     motor_A.run_forever(speed_sp=int(speed))
