@@ -6,4 +6,6 @@ This is a Software engineering project on building a trusted autonomous vehicle.
 - ROS
 - Raspberry PI
 - EV3
+- Camera
+- Rp Lidar
 
