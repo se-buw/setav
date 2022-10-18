@@ -31,7 +31,7 @@ class lane:
         matrix=cv.getPerspectiveTransform(pts1,pts2)
         return cv.warpPerspective(image,matrix,(800,600))
 
-# Gaussian gilter to remove noise from the 
+# Gaussian Blur  to remove noise from the 
     def gaussianFilter(self,image): 
         return cv.GaussianBlur(image,(5,5),cv.BORDER_DEFAULT)
 
