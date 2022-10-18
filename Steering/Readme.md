@@ -1,13 +1,18 @@
-# Steering using Lanes
+# Steering using Lanes 
 
-The hough lines obtained is not continuous. 
 
-So i have separated the lines detected based on their slopes.
+The hough lines obtained is differentiated into left and right lanes depending on their slopes.
 
-if the slope is less than zero it is left lane and if the slope is grater than zero its right lane.
+if the slope is less than zero left lane
 
-Straight lines of left lane is appended into left array vice versa to the right
+if the slope is grater than zero right lane
 
-then i had used polynomial curve fitting through each array which results two polynomial equations. 
+appending lines into arrays
 
-We will get the mid polynomial 
+left line => left array
+right line => right array
+
+A polynomial curve fitting these lines is passed through these arrays
+
+
+
