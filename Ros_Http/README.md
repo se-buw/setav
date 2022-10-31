@@ -1,4 +1,4 @@
-# Connecting ros and ev3 using http server on the ev3  and publing the commands on pc using ros.
+# Connecting ros and ev3 using http server on the ev3  and publish the commands on pc using ros.
 for passing commanda to the motor i have used arrow buttons on the pc.
 
 Pynput is used as a module for lisening key strokes and publish the message.
